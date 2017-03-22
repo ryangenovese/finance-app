@@ -13,6 +13,21 @@
     </div>
   </div>
   <% end %>
+  <table class="table table-hover">
+    <tr>
+      <th>Symbol:</th>
+      <th>Name</th> 
+      <th>Price</th>
+    </tr>
+    <% if @stock %>
+      <tr>
+        <td><%= @stock.ticker %></td>
+        <td><%= @stock.name %></td> 
+        <td><%= @stock.price %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= render 'common/spinner' %>
   <% if @stock %>
     <div id="stock-lookup-results" class="well results-block">
       <strong>Symbol:</strong> <%= @stock.ticker %>
